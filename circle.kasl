@@ -1,0 +1,45 @@
+// Copyright (c) 2026 Shuntaro Kasatani
+// Licensed under the MIT License
+// See LICENSE file for details
+
+import std
+
+let pi = 3.1415926535
+
+struct Circle {
+    var radius = 0.0
+
+    static func new(radius r: Float) -> Circle {
+        var c = Circle()
+        c.radius = r
+        return c
+    }
+
+    func scale(factor: Float) {
+        self.radius = self.radius * factor
+    }
+
+    func area() -> Float {
+        return pi * self.radius * self.radius
+    }
+
+    func perimeter() -> Float {
+        return 2.0 * pi * self.radius
+    }
+}
+
+input radius = 5.0
+output area = 0.0
+output perimeter = 0.0
+
+func main() {
+    // Create a new circle with the given radius
+    var c = Circle.new(radius: radius)
+
+    // Scale the circle by a factor of 2.0
+    c.scale(2.0)
+
+    // Calculate the area and perimeter
+    area = c.area()
+    perimeter = c.perimeter()
+}
